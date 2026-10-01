@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pocket Trader — торговая платформа</title>
+  <link rel="stylesheet" href="assets/css/landing.css?v=19">
+</head>
+<body>
+  <!-- NAV -->
+  <header class="lnav">
+    <div class="container inner">
+      <a href="index.html" class="logo">
+        <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17l5-6 4 4 8-9" stroke="#04140c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Pocket<b>Trader</b>
+      </a>
+      <nav>
+        <a href="#features">Возможности</a>
+        <a href="#markets">Рынки</a>
+        <a href="#how">Как начать</a>
+      </nav>
+      <div class="actions">
+        <button class="btn btn-outline" id="navLogin">Войти</button>
+        <button class="btn btn-primary" id="navRegister">Регистрация</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container inner">
+      <div>
+        <span class="tagline">● Реальные котировки · более 30 активов</span>
+        <h1>Торгуй на графике.<br><span>Побеждай на прогнозе.</span></h1>
+        <p class="sub">Более 30 активов — валюты, криптовалюты, металлы, акции и индексы с реальными котировками. Живые графики, выплаты до 92%, экспирация от 15 секунд. Прогноз «выше/ниже» и мгновенный расчёт результата.</p>
+        <div class="cta">
+          <button class="btn btn-primary btn-lg" id="heroStart">Начать торговать →</button>
+          <a href="terminal.html" class="btn btn-outline btn-lg">Открыть терминал</a>
+        </div>
+        <div class="trust">
+          <div class="t"><div class="n">30+</div><div class="l">торговых активов</div></div>
+          <div class="t"><div class="n">92%</div><div class="l">макс. выплата</div></div>
+          <div class="t"><div class="n">15с</div><div class="l">от экспирации</div></div>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hc-top">
+          <div class="hc-asset"><span class="ic">₿</span> BTC/USD</div>
+          <div class="hc-price"><div class="p" id="heroPrice">64,250.0</div><div class="c" id="heroChg">▲ +0.42%</div></div>
+        </div>
+        <canvas id="heroChart"></canvas>
+        <div class="hc-btns">
+          <button class="up" onclick="location.href='terminal.html'">▲ ВЫШЕ</button>
+          <button class="dn" onclick="location.href='terminal.html'">▼ НИЖЕ</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="block container" id="features">
+    <div class="sec-head">
+      <h2>Всё для торговли в одном месте</h2>
+      <p>Профессиональный терминал с реальной механикой бинарных опционов и живыми котировками.</p>
+    </div>
+    <div class="features">
+      <div class="feature"><div class="fi">📈</div><h3>Профессиональные графики</h3><p>Свечи, линия и область, индикаторы SMA/EMA/BB, RSI и MACD, инструменты рисования, объёмы, прокрутка истории. Реальные котировки через Binance и Yahoo.</p></div>
+      <div class="feature"><div class="fi">⚡</div><h3>Быстрые сделки</h3><p>Экспирация от 15 секунд до месяца. Прогноз «выше/ниже» и мгновенный расчёт результата с выплатой до 92%.</p></div>
+      <div class="feature"><div class="fi">💼</div><h3>Счёт трейдера</h3><p>$30 000 на старте каждому новому трейдеру и пополняемый реальный счёт. Полная статистика побед, winrate и история сделок.</p></div>
+      <div class="feature"><div class="fi">🔔</div><h3>Отложенные ордера</h3><p>Ставь сделку по нужной цене — она откроется автоматически, когда рынок её достигнет.</p></div>
+      <div class="feature"><div class="fi">💾</div><h3>Сохранение прогресса</h3><p>Баланс, история сделок, избранное и статистика сохраняются в браузере между сессиями.</p></div>
+      <div class="feature"><div class="fi">📱</div><h3>Любое устройство</h3><p>Адаптивный интерфейс — торгуй с компьютера, планшета или телефона в одном браузере.</p></div>
+    </div>
+  </section>
+
+  <!-- MARKETS -->
+  <section class="block container" id="markets">
+    <div class="sec-head"><h2>Популярные рынки</h2><p>Валюты, крипта, металлы, акции и индексы с выплатами в реальном времени.</p></div>
+    <div class="markets" id="marketGrid"></div>
+  </section>
+
+  <!-- HOW -->
+  <section class="block container" id="how">
+    <div class="sec-head"><h2>Как начать за 3 шага</h2></div>
+    <div class="steps">
+      <div class="step"><h3>Создай аккаунт</h3><p>Быстрая регистрация по email — прямо в браузере, без подтверждений. Твой прогресс сохраняется на сервере.</p></div>
+      <div class="step"><h3>Выбери актив</h3><p>Открой терминал, выбери валютную пару или криптовалюту и настрой сумму и время сделки.</p></div>
+      <div class="step"><h3>Делай прогноз</h3><p>Нажми «Выше» или «Ниже». Угадал направление — получаешь прибыль до 92% от ставки.</p></div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="block container">
+    <div class="cta-band">
+      <h2>Готов попробовать?</h2>
+      <p>$30 000 на счёте уже ждут. Открывай сделки и следи за реальным рынком.</p>
+      <button class="btn btn-primary btn-lg" id="ctaStart">Создать счёт</button>
+    </div>
+  </section>
+
+  <footer class="lfoot"><div class="container inner">
+    <div>© 2026 Pocket Trader</div>
+    <div>Онлайн-торговля · реальные котировки</div>
+  </div></footer>
+
+  <!-- AUTH MODAL -->
+  <div class="overlay" id="authOverlay">
+    <div class="auth">
+      <div class="auth-head">
+        <button data-tab="login" class="active">Вход</button>
+        <button data-tab="register">Регистрация</button>
+      </div>
+      <div class="auth-body">
+        <div class="err" id="authErr"></div>
+        <div class="field-group" id="nameGroup" style="display:none">
+          <label>Имя</label>
+          <input type="text" id="authName" placeholder="Как вас зовут">
+        </div>
+        <div class="field-group">
+          <label>Email</label>
+          <input type="email" id="authEmail" placeholder="you@example.com" autocomplete="username">
+        </div>
+        <div class="field-group">
+          <label>Пароль</label>
+          <div class="pw-wrap">
+            <input type="password" id="authPass" placeholder="••••••" autocomplete="current-password">
+            <button type="button" class="pw-eye" id="authPassEye" aria-label="Показать пароль"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+        </div>
+        <button class="btn btn-primary" id="authSubmit">Войти</button>
+        <div class="alt" id="authAlt">Нет аккаунта? <a id="authSwitch">Зарегистрироваться</a></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/api.js?v=19"></script>
+  <script src="assets/js/storage.js?v=19"></script>
+  <script src="assets/js/landing.js?v=19"></script>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Личный кабинет — Pocket Trader</title>
+  <link rel="stylesheet" href="assets/css/cabinet.css?v=16">
+</head>
+<body>
+  <header class="cnav">
+    <div class="inner">
+      <a href="terminal.html" class="logo">
+        <span class="mark"><svg viewBox="0 0 24 24" fill="none"><path d="M3 17l5-6 4 4 8-9" stroke="#04140c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        Pocket<b>Trader</b>
+      </a>
+      <span class="sp"></span>
+      <a href="terminal.html" class="btn btn-primary">← В терминал</a>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="grid">
+      <!-- left column -->
+      <div>
+        <div class="card profile">
+          <div class="avatar" id="avatar">?</div>
+          <div class="name-row">
+            <div class="name" id="uName">—</div>
+            <button class="edit" id="editName" title="Изменить имя">✎</button>
+          </div>
+          <div class="name-edit" id="nameEdit">
+            <input id="nameInput" maxlength="24" placeholder="Новое имя">
+            <button class="btn btn-primary" id="saveName">OK</button>
+          </div>
+          <div class="email" id="uEmail">—</div>
+          <div class="badge" id="uBadge">Зарегистрирован</div>
+          <div class="since" id="uSince"></div>
+        </div>
+
+        <div class="card">
+          <h2>Настройки</h2>
+          <div class="set-label">Аватар</div>
+          <div class="avatar-upload">
+            <div class="av-preview" id="avPreview">?</div>
+            <div class="av-actions">
+              <button class="btn btn-ghost" id="avUploadBtn">Загрузить фото</button>
+              <button class="btn btn-ghost" id="avRemoveBtn">Убрать</button>
+              <input type="file" id="avFile" accept="image/*" hidden>
+            </div>
+          </div>
+          <div class="set-label" style="margin-top:16px">Смена пароля</div>
+          <div class="pass-form">
+            <input type="password" id="oldPass" placeholder="Текущий пароль" autocomplete="current-password">
+            <input type="password" id="newPass" placeholder="Новый пароль" autocomplete="new-password">
+            <button class="btn btn-ghost" id="savePass">Изменить пароль</button>
+            <div class="pass-msg" id="passMsg"></div>
+          </div>
+          <button class="btn btn-danger" id="logoutBtn" style="width:100%;margin-top:16px">⎋ Выйти</button>
+        </div>
+      </div>
+
+      <!-- right column -->
+      <div>
+        <div class="card">
+          <h2>Статистика</h2>
+          <div class="stats">
+            <div class="stat"><div class="v up" id="stWins">0</div><div class="l">Победы</div></div>
+            <div class="stat"><div class="v down" id="stLosses">0</div><div class="l">Потери</div></div>
+            <div class="stat"><div class="v blue" id="stWr">—</div><div class="l">Winrate</div></div>
+            <div class="stat"><div class="v" id="stTrades">0</div><div class="l">Всего сделок</div></div>
+            <div class="stat"><div class="v violet" id="stStreak">0</div><div class="l">Лучшая серия</div></div>
+            <div class="stat"><div class="v" id="stPnl">$0</div><div class="l">Итог P&L</div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Транзакции</h2>
+          <div class="tbl-wrap" style="max-height:240px">
+            <table>
+              <thead><tr><th>Тип</th><th>Актив</th><th>Сумма</th><th>Баланс</th><th>Время</th></tr></thead>
+              <tbody id="txBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>История сделок</h2>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th></th><th>Актив</th><th>Ставка</th><th>Вход → Выход</th><th>Результат</th><th>Время</th></tr></thead>
+              <tbody id="histBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>Партнёрская программа</h2>
+          <p class="ref-desc">Приглашай трейдеров по своей ссылке и получай <b id="refRate">10%</b> от их оборота — комиссия автоматически капает на твой реальный счёт.</p>
+          <div class="ref-link">
+            <input id="refLink" readonly value="—">
+            <button class="btn btn-primary" id="refCopy">Копировать</button>
+          </div>
+          <div class="ref-stats">
+            <div class="ref-stat"><div class="v" id="refCount">0</div><div class="l">Приглашено</div></div>
+            <div class="ref-stat"><div class="v" id="refTurnover">$0</div><div class="l">Оборот рефералов</div></div>
+            <div class="ref-stat"><div class="v up" id="refEarned">$0</div><div class="l">Комиссия начислена</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/api.js?v=16"></script>
+  <script src="assets/js/storage.js?v=16"></script>
+  <script src="assets/js/cabinet.js?v=16"></script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Databases (user data — never commit)
+*.db
+*.sqlite
+*.sqlite3
+pt.db
+
+# Secrets
+.env
+.env.local
+
+# Binaries
+*.exe
+cloudflared.exe
+
+# Logs
+*.log
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
